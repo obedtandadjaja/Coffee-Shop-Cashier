@@ -1,9 +1,8 @@
 # Coffee-Shop-Cashier
-A simple cashier program that I wrote in Java long time ago
+A simple Java cashier program (with touch-screen GUI) that I developed a long time ago
 
 ### Screenshot
-![Image of screenshot]
-(https://github.com/obedtandadjaja/Coffee-Shop-Cashier/blob/master/screenshot.png)
+![screenshot](/screenshot.png)
 
 ### Functionality
 1. Add Order and display the prices in the screen on the right
