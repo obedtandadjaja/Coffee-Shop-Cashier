@@ -15,8 +15,8 @@ public class BagelApp extends JFrame{
 	 *	  Declarations
 	 */
 	
-	private int width = 800;
-	private int height = 600;
+	private final int width = 800;
+	private final int height = 600;
 	private JPanel parent;
 	private JPanel panel1;
 	private JPanel panel2a;
@@ -103,14 +103,14 @@ public class BagelApp extends JFrame{
 	
 	private boolean isMember;
 
-	private Order order;
-	private Coffee coffee;
-	private Bagel bagel;
-	private Pastry pastry;
+	private final Order order;
+	private final Coffee coffee;
+	private final Bagel bagel;
+	private final Pastry pastry;
 	
 	private BagelApp()
 	{
-		setTitle("Bagel Order Application");
+		setTitle("Coffe Shop Order Application");
 		setSize(width, height);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(new BorderLayout(10,10));
@@ -154,7 +154,7 @@ public class BagelApp extends JFrame{
 		// PANEL1
 		
 		panel1.setBorder(BorderFactory.createTitledBorder("Products"));
-		panel1.setLayout(new GridLayout(3,1));
+		panel1.setLayout(new GridLayout(1,3));
 		
 		product1 = new JRadioButton("Coffee");
 		product2 = new JRadioButton("Bagel");
@@ -541,7 +541,7 @@ public class BagelApp extends JFrame{
 				quantity.setText("");
 				
 			}
-			else if(arg0.getActionCommand() == "New Order")
+			else if("New Order".equals(arg0.getActionCommand()))
 			{
 				order.clear();
 				product1.doClick();
@@ -551,12 +551,12 @@ public class BagelApp extends JFrame{
 				group5.clearSelection();
 				text.setText("");
 			}
-			else if(arg0.getActionCommand() == "Total")
+			else if("Total".equals(arg0.getActionCommand()))
 			{
 				text.append(String.format("%n%100s%2s%.2f", "Subtotal: ","$", (float)order.calculateSubtotal()/100));
 				text.append(String.format("%n%102s%2s%.2f", "Total: ","$", (float)order.calculateTotal(isMember)/100));
 			}
-			if(arg0.getActionCommand() == "Delete Previous")
+			if("Delete Previous".equals(arg0.getActionCommand()))
 			{
 				int i = order.getOrder().size()-1;
 				int k = order.getOrderprice().size()-1;
@@ -625,11 +625,11 @@ public class BagelApp extends JFrame{
 		}
 	}
 
-	public static void main(String[] args)
-	{
-		BagelApp app = new BagelApp();
-	}
-	
+//	public static void main(String[] args)
+//	{
+//		BagelApp app = new BagelApp();
+//	}
+//	
 	//Getters and Setters
 	public JTextArea getText() {
 		return text;
