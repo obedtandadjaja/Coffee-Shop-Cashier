@@ -1064,6 +1064,7 @@ public class Homepage extends javax.swing.JFrame {
         lbl_food.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbl_food.setText("Food");
 
+        Pastry_But.setFont(new java.awt.Font("STFangsong", 0, 18)); // NOI18N
         Pastry_But.setText("Pastry");
         Pastry_But.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
