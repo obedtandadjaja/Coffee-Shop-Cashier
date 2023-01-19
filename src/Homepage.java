@@ -1026,6 +1026,7 @@ public class Homepage extends javax.swing.JFrame {
 
         Order_Panel.setBorder(javax.swing.BorderFactory.createBevelBorder(null, null, new java.awt.Color(204, 255, 204), null, null));
 
+        Cof_But.setFont(new java.awt.Font("STFangsong", 0, 18)); // NOI18N
         Cof_But.setText("Coffee");
         Cof_But.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1033,6 +1034,7 @@ public class Homepage extends javax.swing.JFrame {
             }
         });
 
+        Other_But.setFont(new java.awt.Font("STFangsong", 0, 18)); // NOI18N
         Other_But.setText("Others");
         Other_But.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1040,6 +1042,7 @@ public class Homepage extends javax.swing.JFrame {
             }
         });
 
+        Smoothie_But.setFont(new java.awt.Font("STFangsong", 0, 18)); // NOI18N
         Smoothie_But.setText("Smoothie");
         Smoothie_But.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1047,6 +1050,7 @@ public class Homepage extends javax.swing.JFrame {
             }
         });
 
+        Tea_But.setFont(new java.awt.Font("STFangsong", 0, 18)); // NOI18N
         Tea_But.setText("Tea");
         Tea_But.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1054,11 +1058,12 @@ public class Homepage extends javax.swing.JFrame {
             }
         });
 
+        lbl_Drink.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbl_Drink.setText("Drink");
 
+        lbl_food.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbl_food.setText("Food");
 
-        Pastry_But.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         Pastry_But.setText("Pastry");
         Pastry_But.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1066,6 +1071,7 @@ public class Homepage extends javax.swing.JFrame {
             }
         });
 
+        Bagel_But.setFont(new java.awt.Font("STFangsong", 0, 18)); // NOI18N
         Bagel_But.setText("Bagel");
         Bagel_But.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1122,6 +1128,7 @@ public class Homepage extends javax.swing.JFrame {
                     .addGroup(Order_PanelLayout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(Order_PanelLayout.createSequentialGroup()
@@ -1156,11 +1163,13 @@ public class Homepage extends javax.swing.JFrame {
                 .addGroup(Order_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Pastry_But, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bagel_But, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50)
                 .addGroup(Order_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
+<<<<<<< HEAD
                 .addContainerGap(18, Short.MAX_VALUE))
                 .addGroup(Order_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(Order_PanelLayout.createSequentialGroup()
@@ -1173,11 +1182,14 @@ public class Homepage extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(MenberEnter_But)
                 .addContainerGap(25, Short.MAX_VALUE))
+=======
                 .addContainerGap(29, Short.MAX_VALUE))
+>>>>>>> 5c200e64e24ae9f26151d1083f98d440b4bcc42a
         );
 
         Home_Panel.add(Order_Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, 504));
 
+        Order_Table.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Order_Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -1205,6 +1217,7 @@ public class Homepage extends javax.swing.JFrame {
         Function_Panel.setBorder(javax.swing.BorderFactory.createBevelBorder(null, null, new java.awt.Color(0, 0, 0), null, null));
 
         Pay_But.setBackground(new java.awt.Color(255, 153, 51));
+        Pay_But.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         Pay_But.setText("   PAY        RM 0.00");
         Pay_But.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         Pay_But.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -1214,19 +1227,25 @@ public class Homepage extends javax.swing.JFrame {
             }
         });
 
+        subTotal_value.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         subTotal_value.setText("0.00");
 
+        lbl_Subtotal.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lbl_Subtotal.setText("SubTotal :   RM");
 
+        Tax_value.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Tax_value.setText("0.00");
 
+        lbl_Tax.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lbl_Tax.setForeground(new java.awt.Color(51, 0, 204));
         lbl_Tax.setText("Tax          :   RM ");
 
         Receipt_Pane.setViewportView(Receipt_Text);
 
+        lbl_Subtotal1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lbl_Subtotal1.setText("Discount :   RM");
 
+        Discount_lbl.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Discount_lbl.setText("0.00");
 
         javax.swing.GroupLayout Function_PanelLayout = new javax.swing.GroupLayout(Function_Panel);
@@ -1288,12 +1307,14 @@ public class Homepage extends javax.swing.JFrame {
 
         Home_Panel.add(Function_Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 0, -1, -1));
 
+        Delete_but.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         Delete_but.setText("REMOVE");
         Delete_but.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Delete_butActionPerformed(evt);
             }
         });
+        Home_Panel.add(Delete_but, new org.netbeans.lib.awtextra.AbsoluteConstraints(461, 386, 137, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
