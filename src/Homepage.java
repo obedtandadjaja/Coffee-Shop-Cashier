@@ -8,6 +8,8 @@ import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import DatabaseConnect.java;
+import java.sql.SQLException;
 
 public class Homepage extends javax.swing.JFrame {
 
@@ -279,10 +281,10 @@ public class Homepage extends javax.swing.JFrame {
         lbl_food = new javax.swing.JLabel();
         Pastry_But = new javax.swing.JButton();
         Bagel_But = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        Menber_lbl = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
-        jButton1 = new javax.swing.JButton();
+        Menber_txt = new javax.swing.JTextPane();
+        MenberEnter_But = new javax.swing.JButton();
         Table_Pane = new javax.swing.JScrollPane();
         Order_Table = new javax.swing.JTable();
         Function_Panel = new javax.swing.JPanel();
@@ -302,11 +304,6 @@ public class Homepage extends javax.swing.JFrame {
         Payment.setTitle("Payment");
         Payment.setResizable(false);
         Payment.setSize(new java.awt.Dimension(277, 450));
-        Payment.addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowActivated(java.awt.event.WindowEvent evt) {
-                PaymentWindowActivated(evt);
-            }
-        });
 
         jPanel1.setPreferredSize(new java.awt.Dimension(430, 386));
 
@@ -1666,6 +1663,14 @@ public class Homepage extends javax.swing.JFrame {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+        Menber_lbl.setText("Menber Code:");
+
+        jScrollPane3.setViewportView(Menber_txt);
+
+        MenberEnter_But.setText("Enter");
+        MenberEnter_But.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenberEnter_ButActionPerformed(evt);
             }
         });
 
@@ -1700,6 +1705,17 @@ public class Homepage extends javax.swing.JFrame {
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(Order_PanelLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(Menber_lbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Order_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Order_PanelLayout.createSequentialGroup()
+                        .addComponent(MenberEnter_But)
+                        .addGap(30, 30, 30)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         Order_PanelLayout.setVerticalGroup(
             Order_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1726,6 +1742,17 @@ public class Homepage extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
                 .addContainerGap(18, Short.MAX_VALUE))
+                .addGroup(Order_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(Order_PanelLayout.createSequentialGroup()
+                        .addGroup(Order_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Pastry_But, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Bagel_But, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(50, 50, 50)
+                        .addComponent(Menber_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(MenberEnter_But)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         Home_Panel.add(Order_Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, 504));
@@ -2046,8 +2073,27 @@ public class Homepage extends javax.swing.JFrame {
     }//GEN-LAST:event_KeyEnter_butActionPerformed
 
     private void PaymentWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_PaymentWindowActivated
+    private void MenberEnter_ButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenberEnter_ButActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PaymentWindowActivated
+        int input = Integer.parseInt(Menber_txt.getText());
+        JFrame f = new JFrame();
+        
+        try {
+            menber = dcon.MenberExist(input);
+        } catch (SQLException ex) {
+            Logger.getLogger(Homepage.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Homepage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if(menber)
+        {
+            JOptionPane.showMessageDialog(f, "Member found");
+        }
+        else
+        {
+             JOptionPane.showMessageDialog(f, "Member not found");
+        }
+    }//GEN-LAST:event_MenberEnter_ButActionPerformed
 
     private void Small_size_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Small_size_btnActionPerformed
         // TODO add your handling code here:
@@ -2224,6 +2270,7 @@ public class Homepage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify
     private javax.swing.JLabel Amount_lbl;
     private javax.swing.JTextPane Amount_txt;
     private javax.swing.JButton Bagel_But;
@@ -2279,6 +2326,7 @@ public class Homepage extends javax.swing.JFrame {
     private javax.swing.JButton KeyClear_but;
     private javax.swing.JButton KeyDot_but;
     private javax.swing.JButton KeyEnter_but;
+
     private javax.swing.JRadioButton Latte_btn;
     private javax.swing.JLabel Latte_price;
     private javax.swing.JRadioButton Low_lvl_btn;
@@ -2293,6 +2341,11 @@ public class Homepage extends javax.swing.JFrame {
     private javax.swing.JRadioButton No_ice_btn1;
     private javax.swing.JRadioButton Oolongpeach_btn;
     private javax.swing.JLabel Oolongpeach_price;
+
+    private javax.swing.JButton MenberEnter_But;
+    private javax.swing.JLabel Menber_lbl;
+    private javax.swing.JTextPane Menber_txt;
+
     private javax.swing.JPanel Order_Panel;
     private javax.swing.JTable Order_Table;
     private javax.swing.JButton Other_But;
@@ -2329,6 +2382,7 @@ public class Homepage extends javax.swing.JFrame {
     private javax.swing.JLabel Tmed_price;
     private javax.swing.JLabel Total_lbl;
     private javax.swing.JTextPane Total_txt;
+
     private javax.swing.JPanel Tsize_Panel1;
     private javax.swing.JLabel Tsmall_price;
     private javax.swing.JPanel Tsugar_lvl1;
@@ -2343,6 +2397,7 @@ public class Homepage extends javax.swing.JFrame {
     private javax.swing.JRadioButton Zero_lvl_btn1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -2368,7 +2423,9 @@ public class Homepage extends javax.swing.JFrame {
     private javax.swing.JLabel required_label9;
     private javax.swing.JLabel subTotal_value;
     // End of variables declaration//GEN-END:variables
+    // End of variables declaration
     
     private boolean menber;
  
+    private DatabaseConnect dcon;
 }
