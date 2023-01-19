@@ -178,34 +178,47 @@ public class Homepage extends javax.swing.JFrame {
         Total_txt = new javax.swing.JTextPane();
         KeyEnter_but = new javax.swing.JButton();
         Coffee = new javax.swing.JFrame();
-        Sugar_lvl = new javax.swing.JPanel();
+        Csugar_lvl = new javax.swing.JPanel();
         Size1 = new javax.swing.JLabel();
         Zero_lvl_btn = new javax.swing.JRadioButton();
         Low_lvl_btn = new javax.swing.JRadioButton();
         Med_lvl_btn = new javax.swing.JRadioButton();
         High_lvl_btn1 = new javax.swing.JRadioButton();
         Full_lvl_btn2 = new javax.swing.JRadioButton();
-        Size_Panel = new javax.swing.JPanel();
+        required_label2 = new javax.swing.JLabel();
+        Csize_Panel = new javax.swing.JPanel();
         Size = new javax.swing.JLabel();
         Small_size_btn = new javax.swing.JRadioButton();
         Med_size_btn = new javax.swing.JRadioButton();
         Big_size_btn = new javax.swing.JRadioButton();
+        Cmed_price = new javax.swing.JLabel();
+        Cbig_price = new javax.swing.JLabel();
+        Csmall_price = new javax.swing.JLabel();
+        required_label = new javax.swing.JLabel();
         Coffee_title = new javax.swing.JLabel();
-        Type_Panel = new javax.swing.JPanel();
+        Ctype_Panel = new javax.swing.JPanel();
         Type = new javax.swing.JLabel();
         Latte_btn = new javax.swing.JRadioButton();
         Espresso_btn = new javax.swing.JRadioButton();
         Cappuccino_btn = new javax.swing.JRadioButton();
-        Ice_lvl = new javax.swing.JPanel();
+        Latte_price = new javax.swing.JLabel();
+        Espresso_price = new javax.swing.JLabel();
+        Cappuccino_price = new javax.swing.JLabel();
+        required_label1 = new javax.swing.JLabel();
+        Cice_lvl = new javax.swing.JPanel();
         Size2 = new javax.swing.JLabel();
         Hot_btn = new javax.swing.JRadioButton();
         Cold_btn = new javax.swing.JRadioButton();
         No_ice_btn = new javax.swing.JRadioButton();
-        Ice_lvl1 = new javax.swing.JPanel();
+        Cice_price1 = new javax.swing.JLabel();
+        Cice_price2 = new javax.swing.JLabel();
+        required_label3 = new javax.swing.JLabel();
+        Ccream_lvl = new javax.swing.JPanel();
         Size3 = new javax.swing.JLabel();
         Cream_btn = new javax.swing.JRadioButton();
         Without_cream_btn = new javax.swing.JRadioButton();
-        jButton2 = new javax.swing.JButton();
+        required_label4 = new javax.swing.JLabel();
+        Cadd_btn = new javax.swing.JButton();
         Sizegroup = new javax.swing.ButtonGroup();
         Typegroup = new javax.swing.ButtonGroup();
         Sugarlevelgroup = new javax.swing.ButtonGroup();
@@ -503,7 +516,7 @@ public class Homepage extends javax.swing.JFrame {
         Coffee.setResizable(false);
         Coffee.setSize(new java.awt.Dimension(1099, 450));
 
-        Sugar_lvl.setBorder(javax.swing.BorderFactory.createBevelBorder(null));
+        Csugar_lvl.setBorder(javax.swing.BorderFactory.createBevelBorder(null));
 
         Size1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         Size1.setText("Sugar Level");
@@ -553,29 +566,38 @@ public class Homepage extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout Sugar_lvlLayout = new javax.swing.GroupLayout(Sugar_lvl);
-        Sugar_lvl.setLayout(Sugar_lvlLayout);
-        Sugar_lvlLayout.setHorizontalGroup(
-            Sugar_lvlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Sugar_lvlLayout.createSequentialGroup()
+        required_label2.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        required_label2.setForeground(new java.awt.Color(102, 102, 102));
+        required_label2.setText("(required)");
+
+        javax.swing.GroupLayout Csugar_lvlLayout = new javax.swing.GroupLayout(Csugar_lvl);
+        Csugar_lvl.setLayout(Csugar_lvlLayout);
+        Csugar_lvlLayout.setHorizontalGroup(
+            Csugar_lvlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Csugar_lvlLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Sugar_lvlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Size1)
-                    .addGroup(Sugar_lvlLayout.createSequentialGroup()
+                .addGroup(Csugar_lvlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Csugar_lvlLayout.createSequentialGroup()
+                        .addComponent(Size1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(required_label2))
+                    .addGroup(Csugar_lvlLayout.createSequentialGroup()
                         .addGap(54, 54, 54)
-                        .addGroup(Sugar_lvlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(Csugar_lvlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Low_lvl_btn)
                             .addComponent(Zero_lvl_btn)
                             .addComponent(Med_lvl_btn)
                             .addComponent(High_lvl_btn1)
                             .addComponent(Full_lvl_btn2))))
-                .addContainerGap(139, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
-        Sugar_lvlLayout.setVerticalGroup(
-            Sugar_lvlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Sugar_lvlLayout.createSequentialGroup()
+        Csugar_lvlLayout.setVerticalGroup(
+            Csugar_lvlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Csugar_lvlLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Size1)
+                .addGroup(Csugar_lvlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Size1)
+                    .addComponent(required_label2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Zero_lvl_btn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -589,8 +611,8 @@ public class Homepage extends javax.swing.JFrame {
                 .addContainerGap(43, Short.MAX_VALUE))
         );
 
-        Size_Panel.setBorder(javax.swing.BorderFactory.createBevelBorder(null));
-        Size_Panel.setPreferredSize(new java.awt.Dimension(272, 242));
+        Csize_Panel.setBorder(javax.swing.BorderFactory.createBevelBorder(null));
+        Csize_Panel.setPreferredSize(new java.awt.Dimension(272, 242));
 
         Size.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         Size.setText("Size");
@@ -622,40 +644,77 @@ public class Homepage extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout Size_PanelLayout = new javax.swing.GroupLayout(Size_Panel);
-        Size_Panel.setLayout(Size_PanelLayout);
-        Size_PanelLayout.setHorizontalGroup(
-            Size_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Size_PanelLayout.createSequentialGroup()
+        Cmed_price.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        Cmed_price.setForeground(new java.awt.Color(102, 102, 102));
+        Cmed_price.setText("+RM1.00");
+
+        Cbig_price.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        Cbig_price.setForeground(new java.awt.Color(102, 102, 102));
+        Cbig_price.setText("+RM2.00");
+
+        Csmall_price.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        Csmall_price.setForeground(new java.awt.Color(102, 102, 102));
+        Csmall_price.setText("+RM0.00");
+
+        required_label.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        required_label.setForeground(new java.awt.Color(102, 102, 102));
+        required_label.setText("(required)");
+
+        javax.swing.GroupLayout Csize_PanelLayout = new javax.swing.GroupLayout(Csize_Panel);
+        Csize_Panel.setLayout(Csize_PanelLayout);
+        Csize_PanelLayout.setHorizontalGroup(
+            Csize_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Csize_PanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Size_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Size)
-                    .addGroup(Size_PanelLayout.createSequentialGroup()
+                .addGroup(Csize_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Csize_PanelLayout.createSequentialGroup()
+                        .addComponent(Size)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(required_label)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(Csize_PanelLayout.createSequentialGroup()
                         .addGap(54, 54, 54)
-                        .addGroup(Size_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Med_size_btn)
-                            .addComponent(Small_size_btn)
-                            .addComponent(Big_size_btn))))
-                .addContainerGap(125, Short.MAX_VALUE))
+                        .addGroup(Csize_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Csize_PanelLayout.createSequentialGroup()
+                                .addComponent(Med_size_btn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                                .addComponent(Cmed_price))
+                            .addGroup(Csize_PanelLayout.createSequentialGroup()
+                                .addComponent(Small_size_btn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Csmall_price))
+                            .addGroup(Csize_PanelLayout.createSequentialGroup()
+                                .addComponent(Big_size_btn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Cbig_price)))))
+                .addContainerGap())
         );
-        Size_PanelLayout.setVerticalGroup(
-            Size_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Size_PanelLayout.createSequentialGroup()
+        Csize_PanelLayout.setVerticalGroup(
+            Csize_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Csize_PanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Size)
+                .addGroup(Csize_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Size)
+                    .addComponent(required_label))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Small_size_btn)
+                .addGroup(Csize_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Small_size_btn)
+                    .addComponent(Csmall_price))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Med_size_btn)
+                .addGroup(Csize_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Med_size_btn)
+                    .addComponent(Cmed_price))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Big_size_btn)
+                .addGroup(Csize_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Big_size_btn)
+                    .addComponent(Cbig_price))
                 .addContainerGap(107, Short.MAX_VALUE))
         );
 
         Coffee_title.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         Coffee_title.setText("Coffee");
 
-        Type_Panel.setBorder(javax.swing.BorderFactory.createBevelBorder(null));
+        Ctype_Panel.setBorder(javax.swing.BorderFactory.createBevelBorder(null));
 
         Type.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         Type.setText("Type");
@@ -687,38 +746,75 @@ public class Homepage extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout Type_PanelLayout = new javax.swing.GroupLayout(Type_Panel);
-        Type_Panel.setLayout(Type_PanelLayout);
-        Type_PanelLayout.setHorizontalGroup(
-            Type_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Type_PanelLayout.createSequentialGroup()
+        Latte_price.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        Latte_price.setForeground(new java.awt.Color(102, 102, 102));
+        Latte_price.setText("RM9.00");
+
+        Espresso_price.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        Espresso_price.setForeground(new java.awt.Color(102, 102, 102));
+        Espresso_price.setText("RM8.00");
+
+        Cappuccino_price.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        Cappuccino_price.setForeground(new java.awt.Color(102, 102, 102));
+        Cappuccino_price.setText("RM8.00");
+
+        required_label1.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        required_label1.setForeground(new java.awt.Color(102, 102, 102));
+        required_label1.setText("(required)");
+
+        javax.swing.GroupLayout Ctype_PanelLayout = new javax.swing.GroupLayout(Ctype_Panel);
+        Ctype_Panel.setLayout(Ctype_PanelLayout);
+        Ctype_PanelLayout.setHorizontalGroup(
+            Ctype_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Ctype_PanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Type_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Type)
-                    .addGroup(Type_PanelLayout.createSequentialGroup()
+                .addGroup(Ctype_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Ctype_PanelLayout.createSequentialGroup()
+                        .addComponent(Type)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(required_label1)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(Ctype_PanelLayout.createSequentialGroup()
                         .addGap(54, 54, 54)
-                        .addGroup(Type_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Espresso_btn)
-                            .addComponent(Latte_btn)
-                            .addComponent(Cappuccino_btn))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(Ctype_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Ctype_PanelLayout.createSequentialGroup()
+                                .addComponent(Espresso_btn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Espresso_price))
+                            .addGroup(Ctype_PanelLayout.createSequentialGroup()
+                                .addComponent(Latte_btn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Latte_price))
+                            .addGroup(Ctype_PanelLayout.createSequentialGroup()
+                                .addComponent(Cappuccino_btn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Cappuccino_price)))))
+                .addContainerGap())
         );
-        Type_PanelLayout.setVerticalGroup(
-            Type_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Type_PanelLayout.createSequentialGroup()
+        Ctype_PanelLayout.setVerticalGroup(
+            Ctype_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Ctype_PanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Type)
+                .addGroup(Ctype_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Type)
+                    .addComponent(required_label1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Latte_btn)
+                .addGroup(Ctype_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Latte_btn)
+                    .addComponent(Latte_price))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Espresso_btn)
+                .addGroup(Ctype_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Espresso_btn)
+                    .addComponent(Espresso_price))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Cappuccino_btn)
+                .addGroup(Ctype_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Cappuccino_btn)
+                    .addComponent(Cappuccino_price))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
-        Ice_lvl.setBorder(javax.swing.BorderFactory.createBevelBorder(null));
-        Ice_lvl.setPreferredSize(new java.awt.Dimension(272, 242));
+        Cice_lvl.setBorder(javax.swing.BorderFactory.createBevelBorder(null));
+        Cice_lvl.setPreferredSize(new java.awt.Dimension(272, 242));
 
         Size2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         Size2.setText("Ice Level");
@@ -750,38 +846,68 @@ public class Homepage extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout Ice_lvlLayout = new javax.swing.GroupLayout(Ice_lvl);
-        Ice_lvl.setLayout(Ice_lvlLayout);
-        Ice_lvlLayout.setHorizontalGroup(
-            Ice_lvlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Ice_lvlLayout.createSequentialGroup()
+        Cice_price1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        Cice_price1.setForeground(new java.awt.Color(102, 102, 102));
+        Cice_price1.setText("+RM1.00");
+
+        Cice_price2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        Cice_price2.setForeground(new java.awt.Color(102, 102, 102));
+        Cice_price2.setText("+RM1.00");
+
+        required_label3.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        required_label3.setForeground(new java.awt.Color(102, 102, 102));
+        required_label3.setText("(required)");
+
+        javax.swing.GroupLayout Cice_lvlLayout = new javax.swing.GroupLayout(Cice_lvl);
+        Cice_lvl.setLayout(Cice_lvlLayout);
+        Cice_lvlLayout.setHorizontalGroup(
+            Cice_lvlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Cice_lvlLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Ice_lvlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Size2)
-                    .addGroup(Ice_lvlLayout.createSequentialGroup()
+                .addGroup(Cice_lvlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Cice_lvlLayout.createSequentialGroup()
+                        .addComponent(Size2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(required_label3)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(Cice_lvlLayout.createSequentialGroup()
                         .addGap(54, 54, 54)
-                        .addGroup(Ice_lvlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Cold_btn)
-                            .addComponent(Hot_btn)
-                            .addComponent(No_ice_btn))))
-                .addContainerGap(55, Short.MAX_VALUE))
+                        .addGroup(Cice_lvlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Cice_lvlLayout.createSequentialGroup()
+                                .addComponent(Cold_btn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Cice_price1))
+                            .addGroup(Cice_lvlLayout.createSequentialGroup()
+                                .addComponent(Hot_btn)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(Cice_lvlLayout.createSequentialGroup()
+                                .addComponent(No_ice_btn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Cice_price2)))))
+                .addContainerGap())
         );
-        Ice_lvlLayout.setVerticalGroup(
-            Ice_lvlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Ice_lvlLayout.createSequentialGroup()
+        Cice_lvlLayout.setVerticalGroup(
+            Cice_lvlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Cice_lvlLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Size2)
+                .addGroup(Cice_lvlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Size2)
+                    .addComponent(required_label3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Hot_btn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Cold_btn)
+                .addGroup(Cice_lvlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Cold_btn)
+                    .addComponent(Cice_price1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(No_ice_btn)
+                .addGroup(Cice_lvlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(No_ice_btn)
+                    .addComponent(Cice_price2))
                 .addContainerGap(107, Short.MAX_VALUE))
         );
 
-        Ice_lvl1.setBorder(javax.swing.BorderFactory.createBevelBorder(null));
-        Ice_lvl1.setPreferredSize(new java.awt.Dimension(272, 242));
+        Ccream_lvl.setBorder(javax.swing.BorderFactory.createBevelBorder(null));
+        Ccream_lvl.setPreferredSize(new java.awt.Dimension(272, 242));
 
         Size3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         Size3.setText("Cream");
@@ -804,26 +930,35 @@ public class Homepage extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout Ice_lvl1Layout = new javax.swing.GroupLayout(Ice_lvl1);
-        Ice_lvl1.setLayout(Ice_lvl1Layout);
-        Ice_lvl1Layout.setHorizontalGroup(
-            Ice_lvl1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Ice_lvl1Layout.createSequentialGroup()
+        required_label4.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        required_label4.setForeground(new java.awt.Color(102, 102, 102));
+        required_label4.setText("(optional)");
+
+        javax.swing.GroupLayout Ccream_lvlLayout = new javax.swing.GroupLayout(Ccream_lvl);
+        Ccream_lvl.setLayout(Ccream_lvlLayout);
+        Ccream_lvlLayout.setHorizontalGroup(
+            Ccream_lvlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Ccream_lvlLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Ice_lvl1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Size3)
-                    .addGroup(Ice_lvl1Layout.createSequentialGroup()
+                .addGroup(Ccream_lvlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Ccream_lvlLayout.createSequentialGroup()
+                        .addComponent(Size3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(required_label4))
+                    .addGroup(Ccream_lvlLayout.createSequentialGroup()
                         .addGap(54, 54, 54)
-                        .addGroup(Ice_lvl1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(Ccream_lvlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Without_cream_btn)
                             .addComponent(Cream_btn))))
                 .addContainerGap(78, Short.MAX_VALUE))
         );
-        Ice_lvl1Layout.setVerticalGroup(
-            Ice_lvl1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Ice_lvl1Layout.createSequentialGroup()
+        Ccream_lvlLayout.setVerticalGroup(
+            Ccream_lvlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Ccream_lvlLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Size3)
+                .addGroup(Ccream_lvlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Size3)
+                    .addComponent(required_label4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Cream_btn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -831,29 +966,41 @@ public class Homepage extends javax.swing.JFrame {
                 .addContainerGap(139, Short.MAX_VALUE))
         );
 
-        jButton2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jButton2.setText("Add");
+        Cadd_btn.setBackground(new java.awt.Color(255, 153, 51));
+        Cadd_btn.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        Cadd_btn.setText("Add");
+        Cadd_btn.setBorder(javax.swing.BorderFactory.createBevelBorder(null));
+        Cadd_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Cadd_btnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout CoffeeLayout = new javax.swing.GroupLayout(Coffee.getContentPane());
         Coffee.getContentPane().setLayout(CoffeeLayout);
         CoffeeLayout.setHorizontalGroup(
             CoffeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CoffeeLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(CoffeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(CoffeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGap(17, 17, 17)
+                .addGroup(CoffeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CoffeeLayout.createSequentialGroup()
                         .addComponent(Coffee_title)
-                        .addGroup(CoffeeLayout.createSequentialGroup()
-                            .addComponent(Size_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(Sugar_lvl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(Ice_lvl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(Ice_lvl1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(Type_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(CoffeeLayout.createSequentialGroup()
+                        .addGroup(CoffeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Ctype_Panel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(CoffeeLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(Cadd_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(CoffeeLayout.createSequentialGroup()
+                                .addComponent(Csize_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(Csugar_lvl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(Cice_lvl, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
+                                .addGap(18, 18, 18)
+                                .addComponent(Ccream_lvl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(17, 17, 17))))
         );
         CoffeeLayout.setVerticalGroup(
             CoffeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -861,16 +1008,16 @@ public class Homepage extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(Coffee_title)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Type_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addComponent(Ctype_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 22, Short.MAX_VALUE)
                 .addGroup(CoffeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Size_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Sugar_lvl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Ice_lvl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Ice_lvl1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+                    .addComponent(Csize_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Csugar_lvl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Cice_lvl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Ccream_lvl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(Cadd_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1387,6 +1534,10 @@ public class Homepage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Without_cream_btnActionPerformed
 
+    private void Cadd_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadd_btnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Cadd_btnActionPerformed
+
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -1426,23 +1577,34 @@ public class Homepage extends javax.swing.JFrame {
     private javax.swing.JTextPane Amount_txt;
     private javax.swing.JButton Bagel_But;
     private javax.swing.JRadioButton Big_size_btn;
+    private javax.swing.JButton Cadd_btn;
     private javax.swing.JRadioButton Cappuccino_btn;
+    private javax.swing.JLabel Cappuccino_price;
+    private javax.swing.JLabel Cbig_price;
+    private javax.swing.JPanel Ccream_lvl;
+    private javax.swing.JPanel Cice_lvl;
+    private javax.swing.JLabel Cice_price1;
+    private javax.swing.JLabel Cice_price2;
+    private javax.swing.JLabel Cmed_price;
     private javax.swing.JButton Cof_But;
     private javax.swing.JFrame Coffee;
     private javax.swing.JLabel Coffee_title;
     private javax.swing.JRadioButton Cold_btn;
     private javax.swing.JRadioButton Cream_btn;
     private javax.swing.ButtonGroup Creamgroup;
+    private javax.swing.JPanel Csize_Panel;
+    private javax.swing.JLabel Csmall_price;
+    private javax.swing.JPanel Csugar_lvl;
+    private javax.swing.JPanel Ctype_Panel;
     private javax.swing.JButton Delete_but;
     private javax.swing.JLabel Discount_lbl;
     private javax.swing.JRadioButton Espresso_btn;
+    private javax.swing.JLabel Espresso_price;
     private javax.swing.JRadioButton Full_lvl_btn2;
     private javax.swing.JPanel Function_Panel;
     private javax.swing.JRadioButton High_lvl_btn1;
     private javax.swing.JPanel Home_Panel;
     private javax.swing.JRadioButton Hot_btn;
-    private javax.swing.JPanel Ice_lvl;
-    private javax.swing.JPanel Ice_lvl1;
     private javax.swing.ButtonGroup Icegroup;
     private javax.swing.JButton Key0_but;
     private javax.swing.JButton Key1_but;
@@ -1458,6 +1620,7 @@ public class Homepage extends javax.swing.JFrame {
     private javax.swing.JButton KeyDot_but;
     private javax.swing.JButton KeyEnter_but;
     private javax.swing.JRadioButton Latte_btn;
+    private javax.swing.JLabel Latte_price;
     private javax.swing.JRadioButton Low_lvl_btn;
     private javax.swing.JRadioButton Med_lvl_btn;
     private javax.swing.JRadioButton Med_size_btn;
@@ -1474,11 +1637,9 @@ public class Homepage extends javax.swing.JFrame {
     private javax.swing.JLabel Size1;
     private javax.swing.JLabel Size2;
     private javax.swing.JLabel Size3;
-    private javax.swing.JPanel Size_Panel;
     private javax.swing.ButtonGroup Sizegroup;
     private javax.swing.JRadioButton Small_size_btn;
     private javax.swing.JButton Smoothie_But;
-    private javax.swing.JPanel Sugar_lvl;
     private javax.swing.ButtonGroup Sugarlevelgroup;
     private javax.swing.JScrollPane Table_Pane;
     private javax.swing.JLabel Tax_value;
@@ -1486,12 +1647,10 @@ public class Homepage extends javax.swing.JFrame {
     private javax.swing.JLabel Total_lbl;
     private javax.swing.JTextPane Total_txt;
     private javax.swing.JLabel Type;
-    private javax.swing.JPanel Type_Panel;
     private javax.swing.ButtonGroup Typegroup;
     private javax.swing.JRadioButton Without_cream_btn;
     private javax.swing.JRadioButton Zero_lvl_btn;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -1506,6 +1665,11 @@ public class Homepage extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_Subtotal1;
     private javax.swing.JLabel lbl_Tax;
     private javax.swing.JLabel lbl_food;
+    private javax.swing.JLabel required_label;
+    private javax.swing.JLabel required_label1;
+    private javax.swing.JLabel required_label2;
+    private javax.swing.JLabel required_label3;
+    private javax.swing.JLabel required_label4;
     private javax.swing.JLabel subTotal_value;
     // End of variables declaration//GEN-END:variables
     
