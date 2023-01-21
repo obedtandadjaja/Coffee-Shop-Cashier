@@ -1,6 +1,6 @@
 
+import java.awt.event.KeyEvent;
 import java.awt.print.PrinterException;
-import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.util.Vector;
 import java.util.logging.Level;
@@ -8,10 +8,13 @@ import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import java.sql.*;
+
 
 public class Homepage extends javax.swing.JFrame {
 
-    public Homepage() {
+    public Homepage() throws SQLException {
+        
         initComponents();
         reset_Val();
     }
@@ -46,6 +49,7 @@ public class Homepage extends javax.swing.JFrame {
         Tax_value.setText("0.00");
         Receipt_Text.setText("");
         Pay_But.setText("   PAY        RM 0.00");
+        member = false;
     }
     
     public void cart_cal(){
@@ -99,7 +103,6 @@ public class Homepage extends javax.swing.JFrame {
      Receipt_Text.setText(Receipt_Text.getText() + "Tax 10%: " + "\tRM"+Tax_value.getText()+"\n");
      Receipt_Text.setText(Receipt_Text.getText() + "----------------------------------------------------------------\n");
      Receipt_Text.setText(Receipt_Text.getText() + "Discount :\tRM"+Discount_lbl.getText()+"\n");
-     Receipt_Text.setText(Receipt_Text.getText() + "====================================\n");
      Receipt_Text.setText(Receipt_Text.getText() +"                     Thanks For Your Business...!"+"\n");
      Receipt_Text.setText(Receipt_Text.getText() + "----------------------------------------------------------------\n");
      Receipt_Text.setText(Receipt_Text.getText() +"                     Software by Techinbox"+"\n");
@@ -333,10 +336,9 @@ public class Homepage extends javax.swing.JFrame {
         lbl_food = new javax.swing.JLabel();
         Pastry_But = new javax.swing.JButton();
         Bagel_But = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
-        jButton1 = new javax.swing.JButton();
+        Member_lbl = new javax.swing.JLabel();
+        Member_but = new javax.swing.JButton();
+        Member_txt = new javax.swing.JTextField();
         Table_Pane = new javax.swing.JScrollPane();
         Order_Table = new javax.swing.JTable();
         Function_Panel = new javax.swing.JPanel();
@@ -352,6 +354,11 @@ public class Homepage extends javax.swing.JFrame {
         lbl_Subtotal1 = new javax.swing.JLabel();
         Discount_lbl = new javax.swing.JLabel();
         Delete_but = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        System_menu = new javax.swing.JMenu();
+        Sys_item = new javax.swing.JMenuItem();
+        Regis_item = new javax.swing.JMenuItem();
+        List_item = new javax.swing.JMenuItem();
 
         Payment.setTitle("Payment");
         Payment.setResizable(false);
@@ -611,7 +618,6 @@ public class Homepage extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        Coffee.setPreferredSize(new java.awt.Dimension(1099, 450));
         Coffee.setResizable(false);
         Coffee.setSize(new java.awt.Dimension(1099, 450));
 
@@ -2333,11 +2339,20 @@ public class Homepage extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Menber Code:");
+        Member_lbl.setText("Member code: ");
 
-        jScrollPane3.setViewportView(jTextPane1);
+        Member_but.setText("Enter");
+        Member_but.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Member_butActionPerformed(evt);
+            }
+        });
 
-        jButton1.setText("Enter");
+        Member_txt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Member_txtKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout Order_PanelLayout = new javax.swing.GroupLayout(Order_Panel);
         Order_Panel.setLayout(Order_PanelLayout);
@@ -2364,13 +2379,14 @@ public class Homepage extends javax.swing.JFrame {
                             .addComponent(lbl_food, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(Order_PanelLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addGap(41, 41, 41)
+                        .addComponent(Member_lbl)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Member_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(Order_PanelLayout.createSequentialGroup()
                 .addGap(115, 115, 115)
-                .addComponent(jButton1)
+                .addComponent(Member_but)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         Order_PanelLayout.setVerticalGroup(
@@ -2391,12 +2407,12 @@ public class Homepage extends javax.swing.JFrame {
                 .addGroup(Order_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Pastry_But, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bagel_But, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
-                .addGroup(Order_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
+                .addGap(49, 49, 49)
+                .addGroup(Order_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Member_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Member_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
+                .addComponent(Member_but)
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
@@ -2530,6 +2546,36 @@ public class Homepage extends javax.swing.JFrame {
         });
         Home_Panel.add(Delete_but, new org.netbeans.lib.awtextra.AbsoluteConstraints(461, 386, 137, -1));
 
+        System_menu.setText("System");
+
+        Sys_item.setText("Cashier System");
+        Sys_item.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Sys_itemActionPerformed(evt);
+            }
+        });
+        System_menu.add(Sys_item);
+
+        Regis_item.setText("Member Registration");
+        Regis_item.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Regis_itemActionPerformed(evt);
+            }
+        });
+        System_menu.add(Regis_item);
+
+        List_item.setText("Member List");
+        List_item.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                List_itemActionPerformed(evt);
+            }
+        });
+        System_menu.add(List_item);
+
+        jMenuBar1.add(System_menu);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -2542,7 +2588,7 @@ public class Homepage extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Home_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Home_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -2936,32 +2982,130 @@ public class Homepage extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
+
+    private void Member_butActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Member_butActionPerformed
+        // TODO add your handling code here:
+       int member_code = Integer.parseInt(Member_txt.getText());
+
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+            cons = DriverManager.getConnection(  "jdbc:mysql://localhost:3306/coffeshop_cashier","root","Leeterqin1126"); 
+            PreparedStatement pst;
+            ResultSet rs;
+            
+            pst = cons.prepareStatement("Select member_ID, member_FNAME, member_LNAME from member_table");
+            rs = pst.executeQuery();
+            
+            while(rs.next())
+            {
+                int id = rs.getInt("member_ID");
+                
+                if(id == member_code)
+                {
+                    member = true;
+                    String mss = "Member founded( " + rs.getString("member_LNAME") + rs.getString("member_FNAME" + " )");
+                    JOptionPane.showMessageDialog(this,mss);
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Homepage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Homepage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Homepage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Homepage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new Homepage().setVisible(true);
+            
+            if(member == false)
+            {
+                JOptionPane.showMessageDialog(this,"Member not founded");
+                Member_txt.setText("");
             }
-        });
-    }
+                
+        } catch (SQLException ex) {
+            Logger.getLogger(Homepage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+    }//GEN-LAST:event_Member_butActionPerformed
+
+    private void Regis_itemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Regis_itemActionPerformed
+        // TODO add your handling code here:
+        new Registration().setVisible(true);
+    }//GEN-LAST:event_Regis_itemActionPerformed
+
+    private void Member_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Member_txtKeyPressed
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER)
+        {
+            int member_code = Integer.parseInt(Member_txt.getText());
+            try {
+                cons = DriverManager.getConnection(  "jdbc:mysql://localhost:3306/coffeshop_cashier","root","Leeterqin1126"); 
+                PreparedStatement pst;
+                ResultSet rs;
+
+                pst = cons.prepareStatement("Select member_ID, member_FNAME, member_LNAME from member_table");
+                rs = pst.executeQuery();
+
+                while(rs.next())
+                {
+                    int id = rs.getInt("member_ID");
+
+                    if(id == member_code)
+                    {
+                        member = true;
+                        String mss = "Member founded( " + rs.getString("member_LNAME") + rs.getString("member_FNAME"+" )");
+                        JOptionPane.showMessageDialog(this,mss);
+                        break;
+                    }
+                }
+
+                if(member == false)
+                {
+                    JOptionPane.showMessageDialog(this,"Member not founded");
+                    Member_txt.setText("");
+                }
+
+            } catch (SQLException ex) {
+                Logger.getLogger(Homepage.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_Member_txtKeyPressed
+
+    private void Sys_itemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Sys_itemActionPerformed
+        // TODO add your handling code her
+        setVisible(true);
+    }//GEN-LAST:event_Sys_itemActionPerformed
+
+    private void List_itemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_List_itemActionPerformed
+        // TODO add your handling code here:
+        new Display_Member().setVisible(true);
+    }//GEN-LAST:event_List_itemActionPerformed
+
+    
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(Homepage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(Homepage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(Homepage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(Homepage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            @Override
+//            public void run() {
+//                new Homepage().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Amount_lbl;
@@ -3066,9 +3210,13 @@ public class Homepage extends javax.swing.JFrame {
     private javax.swing.JButton KeyEnter_but;
     private javax.swing.JRadioButton Latte_btn;
     private javax.swing.JLabel Latte_price;
+    private javax.swing.JMenuItem List_item;
     private javax.swing.JRadioButton Low_lvl_btn;
     private javax.swing.JRadioButton Med_lvl_btn;
     private javax.swing.JRadioButton Med_size_btn;
+    private javax.swing.JButton Member_but;
+    private javax.swing.JLabel Member_lbl;
+    private javax.swing.JTextField Member_txt;
     private javax.swing.JRadioButton No_ice_btn;
     private javax.swing.JLabel Optional_label14;
     private javax.swing.JLabel Optional_label15;
@@ -3116,6 +3264,7 @@ public class Homepage extends javax.swing.JFrame {
     private javax.swing.JFrame Payment;
     private javax.swing.JScrollPane Receipt_Pane;
     private javax.swing.JTextPane Receipt_Text;
+    private javax.swing.JMenuItem Regis_item;
     private javax.swing.JLabel Size;
     private javax.swing.JLabel Size1;
     private javax.swing.JLabel Size2;
@@ -3124,6 +3273,8 @@ public class Homepage extends javax.swing.JFrame {
     private javax.swing.JRadioButton Small_size_btn;
     private javax.swing.JButton Smoothie_But;
     private javax.swing.ButtonGroup Sugarlevelgroup;
+    private javax.swing.JMenuItem Sys_item;
+    private javax.swing.JMenu System_menu;
     private javax.swing.JScrollPane Table_Pane;
     private javax.swing.JLabel Tax_value;
     private javax.swing.JButton Tea_But;
@@ -3133,18 +3284,18 @@ public class Homepage extends javax.swing.JFrame {
     private javax.swing.ButtonGroup Typegroup;
     private javax.swing.JRadioButton Without_cream_btn;
     private javax.swing.JRadioButton Zero_lvl_btn;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+
     private javax.swing.JTextPane jTextPane1;
     private javax.swing.JFrame jyBagelSection;
     private javax.swing.JFrame jyPastrySection1;
+
     private javax.swing.JLabel lbl_Drink;
     private javax.swing.JLabel lbl_Subtotal;
     private javax.swing.JLabel lbl_Subtotal1;
@@ -3163,6 +3314,6 @@ public class Homepage extends javax.swing.JFrame {
     private javax.swing.JLabel subTotal_value;
     // End of variables declaration//GEN-END:variables
     
-    private boolean menber;
- 
+    private boolean member;
+    private Connection cons;
 }
